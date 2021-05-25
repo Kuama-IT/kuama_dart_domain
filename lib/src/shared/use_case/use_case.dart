@@ -4,6 +4,16 @@ import 'package:kuama_dart_domain/kuama_dart_domain.dart';
 import 'package:kuama_dart_domain/src/shared/errors/failure.dart';
 import 'package:kuama_dart_domain/src/utils/lg.dart';
 
+class UseCaseError {
+  final Object error;
+  final StackTrace stackTrace;
+
+  UseCaseError(this.error, this.stackTrace);
+
+  @override
+  String toString() => '$runtimeType\n$error\n$stackTrace';
+}
+
 abstract class UseCase<TParams extends Params, TResult> {
   Stream<Either<Failure, TResult>> call(TParams params) async* {
     try {
@@ -11,6 +21,9 @@ abstract class UseCase<TParams extends Params, TResult> {
         yield result;
       }
     } catch (error, stackTrace) {
+      assert(() {
+        throw UseCaseError(error, stackTrace);
+      }());
       lg.warning(() {
         return PrettyObject({
           'Error in UseCase($runtimeType)': '$error\n$stackTrace',
