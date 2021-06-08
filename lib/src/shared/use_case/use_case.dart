@@ -21,6 +21,7 @@ abstract class UseCase<TParams extends Params, TResult> {
         yield result;
       }
     } catch (error, stackTrace) {
+      // Trigger error only during debug mode
       assert(() {
         throw UseCaseError(error, stackTrace);
       }());
