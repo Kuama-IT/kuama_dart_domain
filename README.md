@@ -1,5 +1,8 @@
 # Domain
 
+[![Test, build and generate code coverage](https://github.com/Kuama-IT/kuama_dart_domain/actions/workflows/main.yml/badge.svg)](https://github.com/Kuama-IT/kuama_dart_domain/actions/workflows/main.yml)
+[![codecov](https://codecov.io/gh/Kuama-IT/kuama_dart_domain/branch/feature/base_structure/graph/badge.svg?token=F47H09I73Y)](https://codecov.io/gh/Kuama-IT/kuama_dart_domain)
+
 Defines the basic structure of a flutter project. Based on Clean Architecture.
 This project represents the layer domain.
 
