@@ -1,5 +1,5 @@
-import 'package:kuama_dart_domain/kuama_dart_domain.dart';
 import 'package:kuama_dart_domain/src/shared/pretty_formatter/pretty_formatter.dart';
+import 'package:rxdart/rxdart.dart';
 
 abstract class Fault with PrettyObject {
   final ErrorAndStackTrace? error;
