@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-library lib;
+library kuama_dart_feature_permissions;
 
 export 'src/features/permissions/entities/permission.dart';
 export 'src/features/permissions/repositories/permission_repository.dart';
