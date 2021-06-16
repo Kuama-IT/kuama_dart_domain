@@ -12,14 +12,24 @@ dependencies:
 
   logging: ^1.0.1
 
-  rxdart: ^0.27.0
+  rxdart: ^0.27.1
   dartz: ^0.10.0-nullsafety.2
   built_value: ^8.0.6
   built_collection: ^5.0.0
-  equatable: ^2.0.2
+  equatable: ^2.0.3
 
   get_it: ^7.1.3
 
 dev_dependencies:
   pedantic: ^1.9.0
   test:
+
+  index_generator: ^2.0.1
+
+# To generate index files: flutter pub run index_generator:main
+index_generator:
+  indexes:
+    - path: lib
+      name: feature_permission
+      export:
+        - src/features/permissions
