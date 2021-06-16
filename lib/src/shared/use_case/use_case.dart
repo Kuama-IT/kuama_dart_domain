@@ -14,7 +14,7 @@ class UseCaseError {
   String toString() => '$runtimeType\n$error\n$stackTrace';
 }
 
-abstract class UseCase<TParams extends Params, TResult> {
+abstract class UseCase<TParams, TResult> {
   Stream<Either<Failure, TResult>> call(TParams params) async* {
     try {
       await for (final result in tryCall(params)) {
@@ -36,6 +36,13 @@ abstract class UseCase<TParams extends Params, TResult> {
   }
 
   Stream<Either<Failure, TResult>> tryCall(TParams params);
+}
+
+/// Converts the current value<T> of the Stream to Right<T> or Left<T>
+extension EitherOnStream<T> on Stream<T> {
+  Stream<Either<TLeft, T>> toRight<TLeft>() => map(right);
+
+  Stream<Either<T, TRight>> toLeft<TRight>() => map(left);
 }
 
 abstract class Params extends Equatable {
