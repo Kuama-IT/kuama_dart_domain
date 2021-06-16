@@ -4,6 +4,10 @@ enum Permission {
   backgroundPosition,
 }
 
+extension PermissionNameExtension on Permission {
+  String get name => '$this'.split('.').last;
+}
+
 enum PermissionStatus {
   /// The permission can only be activated from the platform settings
   permanentlyDenied,
