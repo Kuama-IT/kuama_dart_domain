@@ -16,7 +16,7 @@ class UpdateCanAskPermissionParams extends ParamsBase {
 abstract class UpdateCanAskPermission extends UseCase<UpdateCanAskPermissionParams, bool> {
   UpdateCanAskPermission();
 
-  factory UpdateCanAskPermission.factory() = _PreferencesUpdateCanAskPermission;
+  factory UpdateCanAskPermission.preferences() = _PreferencesUpdateCanAskPermission;
 }
 
 /// [UpdateCanAskPermission] Use the repository [PermissionPreferencesRepository]
